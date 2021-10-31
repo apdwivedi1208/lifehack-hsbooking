@@ -4,19 +4,24 @@
 
 
 ## Introduction
-MISSING
+Team Lifehackers dedicated to solving simple life problems. We all know that post-pandemic all corporate offices have reduced their infrastructure. Visiting offices is now an ad-hoc basis for all employees. In this scenario, most of the offices does not have any system to manage the booking seats and provide facilities like food and parking. It is very difficult for the canteen vendors also to plan the food which leads to wastage or shortage. 
+To overcome this situation, team lifehackers has developed Hot Seat booking that can be used by any corporate to manage the ad-hoc office seat booking and facilitate food & parking as required by their employees visiting an office on that particular day.
 
 ## Getting Started
-MISSING
+Get hands on on Oracle Visual Builder and Oracle Apex
 
 ### Prerequisites
-MISSING
+Oracle cloud
+Oracle Visual Builder
+Oracle Autonomous database
+Oracle Apex
+Oracle Analytics Server
 
 ## Notes/Issues
-MISSING
+Currently App developed for Android Mobile App but can be exposed to iOS or web channel without writting code.
 
 ## URLs
-* Nothing at this time
+* Mobile App
 
 ## Contributing
 This project is open source.  Please submit your contributions by forking this repository and submitting a pull request!  Oracle appreciates any contributions that are made by the open source community.
