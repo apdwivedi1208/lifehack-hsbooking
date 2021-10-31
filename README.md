@@ -13,9 +13,9 @@ Get hands on on Oracle Visual Builder and Oracle Apex
 ### Prerequisites
 1.Oracle cloud <br>
 2.Oracle Visual Builder <br>
-Oracle Autonomous database
-Oracle Apex
-Oracle Analytics Server
+3. Oracle Autonomous database <br>
+4. Oracle Apex <br>
+5. Oracle Analytics Server
 
 ## Notes/Issues
 Currently App developed for Android Mobile App but can be exposed to iOS or web channel without writting code.
