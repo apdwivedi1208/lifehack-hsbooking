@@ -1,0 +1,8 @@
+{
+  "id": "book-desk",
+  "description": "Flow main",
+  "defaultPage": "book-desk-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

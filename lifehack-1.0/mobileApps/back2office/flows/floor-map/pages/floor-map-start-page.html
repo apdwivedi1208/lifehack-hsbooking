@@ -1,0 +1,38 @@
+<oj-ext-mobile-page-template id="page-template" page-title="floor-map">
+  
+  <div class="oj-flex-item oj-flex">
+    <p class="oj-flex-item oj-sm-flex-initial">
+      <oj-bind-text value="[[ $variables.selectedBuilding ]]"></oj-bind-text>
+    </p>
+    <oj-input-date label-hint="Date" class="oj-flex-item"
+      value="{{ $application.variables.globaldatetime }}" min="2021-10-26"
+      on-value-changed="[[$listeners.ojInputDateValue]]"></oj-input-date>
+    <div class="oj-flex-item">
+      <oj-button class="oj-button-full-width button1" on-oj-action="[[$listeners.ojButtonOjAction]]">Get Available Seats</oj-button>
+    </div>
+  </div>
+  <oj-button id="drawerToggleButton" chroming="borderless" display="icons" slot="startControl">
+        
+    
+    
+    
+    <span slot="startIcon" class="oj-ux-ico-list"></span>
+        
+    
+    
+    
+    <span>
+      
+      
+      
+      <oj-bind-text></oj-bind-text>
+    
+    
+    
+    </span>
+    
+  
+  
+  
+  </oj-button>
+</oj-ext-mobile-page-template>

@@ -1,0 +1,17 @@
+{
+  "description": "",
+  "root": "navigateToCheckin",
+  "actions": {
+    "navigateToCheckin": {
+      "module": "vb/action/builtin/navigateAction",
+      "@dt": {
+        "targetType": "flow"
+      },
+      "parameters": {
+        "target": "parent",
+        "flow": "checkin"
+      }
+    }
+  },
+  "variables": {}
+}

@@ -1,0 +1,49 @@
+{
+  "description": "Navigates to the flow selected in the navigation drawer.",
+  "variables": {
+    "item": {
+      "required": true,
+      "type": "string",
+      "input": "fromCaller"
+    }
+  },
+  "root": "switch1",
+  "actions": {
+    "switch1": {
+      "module": "vb/action/builtin/switchAction",
+      "outcomes": {
+        "home": "navigateToPage0",
+        "checkin": "navigateToPage1",
+        "amenities": "navigateToPage2",
+        "healthupdate": "navigateToPage3"
+      },
+      "parameters": {
+        "caseValue": "{{ $chain.variables.item }}"
+      }
+    },
+    "navigateToPage0": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "app/home"
+      }
+    },
+    "navigateToPage1": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "app/checkin"
+      }
+    },
+    "navigateToPage2": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "app/amenities"
+      }
+    },
+    "navigateToPage3": {
+      "module": "vb/action/builtin/navigateAction",
+      "parameters": {
+        "page": "app/healthupdate"
+      }
+    }
+  }
+}

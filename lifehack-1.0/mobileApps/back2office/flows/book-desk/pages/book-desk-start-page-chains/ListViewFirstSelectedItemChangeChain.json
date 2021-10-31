@@ -1,0 +1,54 @@
+{
+  "description": "",
+  "root": "fireNotificationRowData",
+  "actions": {
+    "fireNotificationRowData": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $variables.rowData ]]",
+        "type": "info",
+        "displayMode": "transient"
+      },
+      "outcomes": {
+        "success": "assignVariablesGlobalSelectedBuilding"
+      }
+    },
+    "assignVariablesGlobalSelectedBuilding": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$application.variables.globalSelectedBuilding": {
+          "source": "{{ $variables.rowData }}"
+        }
+      },
+      "outcomes": {
+        "success": "navigateToFloorMap"
+      }
+    },
+    "navigateToFloorMap": {
+      "module": "vb/action/builtin/navigateAction",
+      "@dt": {
+        "targetType": "flow"
+      },
+      "parameters": {
+        "target": "parent",
+        "flow": "floor-map",
+        "params": {
+          "selectedBuilding": "{{ $application.variables.globalSelectedBuilding }}"
+        }
+      }
+    }
+  },
+  "variables": {
+    "rowKey": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    },
+    "rowData": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

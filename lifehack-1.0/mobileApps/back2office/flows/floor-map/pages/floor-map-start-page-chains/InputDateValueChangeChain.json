@@ -1,0 +1,32 @@
+{
+  "description": "",
+  "root": "assignVariablesGlobaldatetime",
+  "actions": {
+    "assignVariablesGlobaldatetime": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$application.variables.globaldatetime": {
+          "source": "{{ $variables.value }}"
+        }
+      },
+      "outcomes": {
+        "success": "fireNotificationGlobaldatetime"
+      }
+    },
+    "fireNotificationGlobaldatetime": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $application.variables.globaldatetime ]]",
+        "type": "info"
+      }
+    }
+  },
+  "variables": {
+    "value": {
+      "required": true,
+      "type": "any",
+      "input": "fromCaller"
+    }
+  }
+}

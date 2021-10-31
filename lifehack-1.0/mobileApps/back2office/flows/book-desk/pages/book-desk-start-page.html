@@ -1,0 +1,44 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Book Your Desk">
+  
+  <div class="oj-flex-item oj-flex">
+    <oj-list-view class="oj-flex-item oj-sm-flex-initial" data="[[$page.variables.getOfficesListSDP]]"
+      selection-mode="single" on-selection-changed="[[$listeners.ojListViewSelection]]">
+      <template slot="itemTemplate">
+        <div class="oj-flex">
+          <div class="oj-flex-item oj-sm-12 oj-md-6">
+            <oj-bind-text value='[[ ($current.data.office_country + " " + $current.data.office_city) ]]'></oj-bind-text>
+          </div>
+        </div>
+        <div class="oj-flex">
+          <div class="oj-flex-item oj-sm-12 oj-md-6">
+            <oj-bind-text value='[[ ($current.data.office_name + " " + $current.data.office_address) ]]'></oj-bind-text>
+          </div>
+        </div>
+        <div class="oj-flex">
+          <div class="oj-flex-item oj-sm-12 oj-md-6">
+            <oj-bind-text value="[[ $current.data.floor ]]"></oj-bind-text>
+          </div>
+        </div>
+      </template>
+    </oj-list-view>
+  </div>
+  <oj-button id="drawerToggleButton" chroming="borderless" display="icons" slot="startControl">
+        
+    
+    
+    <span slot="startIcon" class="oj-ux-ico-list"></span>
+        
+    
+    
+    <span>
+      
+      
+      <oj-bind-text></oj-bind-text>
+    
+    
+    </span>
+    
+  
+  
+  </oj-button>
+</oj-ext-mobile-page-template>

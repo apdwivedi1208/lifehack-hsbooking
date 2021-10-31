@@ -1,0 +1,53 @@
+<oj-ext-mobile-page-template id="page-template" page-title="My Bookings">
+  
+  <div class="oj-flex-item oj-flex">
+
+    
+
+    
+    <oj-list-view class="oj-flex-item oj-sm-flex-initial" data="[[$page.variables.getMyBookingListSDP]]">
+      <template slot="itemTemplate">
+        <div class="oj-flex">
+          <div class="oj-flex-item oj-sm-12 oj-md-6">
+            <oj-bind-text
+              value='[[ ($current.data.id + " " + $current.data.booking_date + " " + $current.data.seat_detail) ]]'></oj-bind-text>
+          </div>
+        </div>
+        <div class="oj-flex">
+          <div class="oj-flex-item oj-sm-12 oj-md-6">
+            <oj-bind-text value='[[ ($current.data.food + " " + $current.data.parking) ]]'></oj-bind-text>
+          </div>
+        </div>
+        <div class="oj-flex">
+          <div class="oj-flex-item oj-sm-12 oj-md-6">
+            <oj-bind-text value="[[ $current.data.status ]]"></oj-bind-text>
+          </div>
+        </div>
+      </template>
+    </oj-list-view>
+  </div>
+  <oj-button id="drawerToggleButton" chroming="borderless" display="icons" slot="startControl">
+        
+    
+    
+    
+    <span slot="startIcon" class="oj-ux-ico-list"></span>
+        
+    
+    
+    
+    <span>
+      
+      
+      
+      <oj-bind-text></oj-bind-text>
+    
+    
+    
+    </span>
+    
+  
+  
+  
+  </oj-button>
+</oj-ext-mobile-page-template>

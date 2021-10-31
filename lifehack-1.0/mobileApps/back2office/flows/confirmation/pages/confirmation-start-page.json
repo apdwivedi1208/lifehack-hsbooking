@@ -1,0 +1,123 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "getSeatAvailListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "apex-getSeatAvailability/getSeatAvail",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getSeatAvailResponse",
+        "uriParameters": {
+          "bookingDate": "{{ $application.variables.globaldatetime }}",
+          "officeId": "{{ $application.variables.globalSelectedBuilding }}"
+        }
+      }
+    },
+    "getSeatAvailListSDP2": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "apex-getSeatAvailability/getSeatAvail",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getSeatAvailResponse2",
+        "uriParameters": {
+          "bookingDate": "{{ $application.variables.globaldatetime }}",
+          "officeId": "{{ $application.variables.globalSelectedBuilding }}"
+        }
+      }
+    },
+    "oclAmenitiesListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_OclAmenities",
+        "keyAttributes": "amentiesType",
+        "itemsPath": "items",
+        "responseType": "getallOclAmenitiesResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "amentiesType"
+          ]
+        }
+      }
+    }
+
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getallOclAmenitiesResponse": {
+      "endpoint": "getall_OclAmenities",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getSeatAvailResponse": {
+      "endpoint": "getSeatAvail",
+      "service": "apex-getSeatAvailability",
+      "path": "response"
+    },
+    "@decorators.getSeatAvailResponse2": {
+      "endpoint": "getSeatAvail",
+      "service": "apex-getSeatAvailability",
+      "path": "response"
+    },
+    "getallOclAmenitiesResponse": {
+      "items": [
+        {
+          "amentiesType": "string"
+        }
+      ]
+    },
+    "getSeatAvailResponse": {
+      "items": [
+        {
+          "hs_available": "number",
+          "hs_total": "number",
+          "id": "number",
+          "office_id": "number"
+        }
+      ]
+    },
+    "getSeatAvailResponse2": {
+      "items": [
+        {
+          "hs_available": "number",
+          "hs_total": "number",
+          "id": "number"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "ojButtonOjAction": {
+      "chains": [
+        {
+          "chainId": "ButtonActionChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-ext-mobile-page-template": {
+        "path": "vb/components/mobile-page-template/loader"
+      },
+      "oj-option": {
+        "path": "ojs/ojoption"
+      },
+      "oj-radioset": {
+        "path": "ojs/ojradioset"
+      },
+      "oj-table": {
+        "path": "ojs/ojtable"
+      },
+      "oj-vb-list-item": {
+        "path": "vb/components/list-item/loader"
+      }
+
+    }
+  }
+}

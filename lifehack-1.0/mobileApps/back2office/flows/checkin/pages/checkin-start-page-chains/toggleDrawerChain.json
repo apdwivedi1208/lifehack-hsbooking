@@ -1,0 +1,13 @@
+{
+  "variables": {},
+  "root": "toggleDrawer",
+  "actions": {
+    "toggleDrawer": {
+      "module": "vb/action/builtin/fireCustomEventAction",
+      "parameters": {
+        "name": "application:toggleDrawer",
+        "payload": {}
+      }
+    }
+  }
+}

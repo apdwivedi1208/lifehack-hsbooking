@@ -1,0 +1,20 @@
+{
+  "description": "",
+  "root": "navigateToConfirmation",
+  "actions": {
+    "navigateToConfirmation": {
+      "module": "vb/action/builtin/navigateAction",
+      "@dt": {
+        "targetType": "flow"
+      },
+      "parameters": {
+        "target": "parent",
+        "flow": "confirmation",
+        "params": {
+          "oclDateTime": "{{ $page.variables.bookdatetime }}"
+        }
+      }
+    }
+  },
+  "variables": {}
+}

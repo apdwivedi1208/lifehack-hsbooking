@@ -1,0 +1,14 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Check In">
+  <oj-button slot="startControl" id="drawerToggleButton" on-click="[[$listeners.fireToggleDrawer]]" chroming="borderless" display="icons">
+        <span slot="startIcon" class="oj-ux-ico-list"></span>
+        <span><oj-bind-text value="[[ $application.translations.app.toggle_drawer_label ]]"></oj-bind-text></span>
+    </oj-button>
+  <div class="oj-flex-item oj-flex">
+        <oj-file-picker capture='implementation' accept='["image/*"]'
+          class="oj-filepicker-custom oj-flex-item oj-sm-align-self-center">
+              <oj-button slot='trigger' chroming='outlined' on-oj-action="[[$listeners.ojButtonOjAction]]"
+                class="oj-button-full-width">Scan QR Code 2<span class="oj-ux-ico-file-image" slot="startIcon"></span>
+              </oj-button>
+        </oj-file-picker>
+  </div>
+</oj-ext-mobile-page-template>

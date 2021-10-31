@@ -1,0 +1,52 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Confirmation">
+  
+  <div class="oj-flex-item oj-flex">
+    <div class="oj-panel oj-flex-item">
+      <div class="oj-flex">
+        <h5 class="oj-flex-item oj-sm-flex-initial">Final Booking Details</h5>
+      </div>
+      <div class="oj-flex">
+        <oj-table scroll-policy="loadMoreOnScroll" class="oj-flex-item oj-sm-flex-initial"
+          data="[[$page.variables.getSeatAvailListSDP2]]"
+          columns='[{"headerText":"id","field":"id"},{"headerText":"hs_available","field":"hs_available"},{"headerText":"hs_total","field":"hs_total"}]'></oj-table>
+      </div>
+      <div class="oj-flex">
+        <p class="oj-flex-item oj-sm-flex-initial"><oj-bind-text
+                                                       value=" [[ $application.variables.globaldatetime ]]"></oj-bind-text></p>
+      </div>
+      <div class="oj-flex">
+        <oj-radioset label-hint="Do You Need Food ?" class="oj-flex-item oj-sm-flex-initial" required="true"
+          value="{{ $application.variables.isFoodNeeded }}">
+          <oj-option value="Yes">Yes</oj-option>
+          <oj-option value="No">No</oj-option>
+        </oj-radioset>
+      </div>
+      <div class="oj-flex">
+        <oj-radioset label-hint="Do You Need Parking ?" class="oj-flex-item oj-sm-flex-initial" required="true"
+          value="{{ $application.variables.isParkingNeeded }}">
+          <oj-option value="Yes">Yes</oj-option>
+          <oj-option value="No">No</oj-option>
+        </oj-radioset>
+      </div>
+      <div class="oj-flex">
+        <div class="oj-flex-item oj-sm-align-self-center">
+          <oj-button class="oj-button-full-width button1" on-oj-action="[[$listeners.ojButtonOjAction]]">Book Now</oj-button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <oj-button id="drawerToggleButton" chroming="borderless" display="icons" slot="startControl">
+        
+    
+    <span slot="startIcon" class="oj-ux-ico-list"></span>
+        
+    
+    <span>
+      
+      <oj-bind-text></oj-bind-text>
+    
+    </span>
+    
+  
+  </oj-button>
+</oj-ext-mobile-page-template>

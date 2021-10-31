@@ -1,0 +1,8 @@
+{
+  "id": "floor-map",
+  "description": "Flow main",
+  "defaultPage": "floor-map-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

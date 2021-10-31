@@ -1,0 +1,86 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Ords Madhack",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/hsbooking",
+            "description": "Ords Madhack"
+        }
+    ],
+    "paths": {
+        "/book": {
+            "post": {
+                "operationId": "postBook",
+                "parameters": [
+                    {
+                        "name": "officeId",
+                        "in": "query",
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "x-vb": {
+                            "defaultValue": "1"
+                        }
+                    },
+                    {
+                        "name": "seatNumber",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "Hot Seat"
+                        }
+                    },
+                    {
+                        "name": "bookingDate",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "2021-10-27"
+                        }
+                    },
+{
+                        "name": "userName",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "awadhesh"
+                        }
+                    },
+                    {
+                        "name": "food",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "Yes"
+                        }
+                    }                    ,
+                    {
+                        "name": "parking",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "Yes"
+                        }
+                    }
+                ],
+                "responses": {},
+                "x-vb": {
+                    "actionHint": "create"
+                }
+            }
+        }
+    }
+}

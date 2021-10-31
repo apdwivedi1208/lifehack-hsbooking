@@ -1,0 +1,96 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "getOfficesListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "apex-GetOfficeList/getOffices",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getOfficesResponse2"
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getallOclBuildingOfficeResponse": {
+      "endpoint": "getall_OclBuildingOffice",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getOfficesResponse": {
+      "endpoint": "getOffices",
+      "service": "apex-GetOfficeList",
+      "path": "response"
+    },
+    "@decorators.getOfficesResponse2": {
+      "endpoint": "getOffices",
+      "service": "apex-GetOfficeList",
+      "path": "response"
+    },
+    "getallOclBuildingOfficeResponse": {
+      "items": [
+        {
+          "country": "string",
+          "id": "number",
+          "officeLocation": "string",
+          "state": "string"
+        }
+      ]
+    },
+    "getOfficesResponse": {
+      "items": [
+        {
+          "floor": "string",
+          "id": "number",
+          "office_address": "string",
+          "office_city": "string",
+          "office_country": "string",
+          "office_name": "string"
+        }
+      ]
+    },
+    "getOfficesResponse2": {
+      "items": [
+        {
+          "floor": "string",
+          "id": "number",
+          "office_address": "string",
+          "office_city": "string",
+          "office_country": "string",
+          "office_name": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {
+    "ojListViewSelection": {
+      "chains": [
+        {
+          "chainId": "ListViewFirstSelectedItemChangeChain",
+          "parameters": {
+            "rowData": "{{ $event.detail.value[0] }}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-ext-mobile-page-template": {
+        "path": "vb/components/mobile-page-template/loader"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-vb-list-item": {
+        "path": "vb/components/list-item/loader"
+      }
+
+    }
+  }
+}

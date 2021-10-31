@@ -1,0 +1,55 @@
+{
+  "description": "",
+  "root": "callRestPostBook",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestPostBook.message.summary ]]",
+        "type": "error",
+        "displayMode": "transient"
+      }
+    },
+    "fireNotification3": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "success",
+        "type": "info",
+        "displayMode": "transient"
+      },
+      "outcomes": {
+        "success": "navigateToMybooking"
+      }
+    },
+    "callRestPostBook": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "apex-bookseat/postBook",
+        "uriParams": {
+          "bookingDate": "{{ $application.variables.globaldatetime }}",
+          "officeId": "{{ $application.variables.globalSelectedBuilding }}",
+          "userName": "{{ $application.variables.globalusername }}",
+          "food": "{{ $application.variables.isFoodNeeded }}",
+          "parking": "{{ $application.variables.isParkingNeeded }}"
+        }
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "fireNotification3"
+      }
+    },
+    "navigateToMybooking": {
+      "module": "vb/action/builtin/navigateAction",
+      "@dt": {
+        "targetType": "flow"
+      },
+      "parameters": {
+        "target": "parent",
+        "flow": "mybooking"
+      }
+    }
+  },
+  "variables": {}
+}

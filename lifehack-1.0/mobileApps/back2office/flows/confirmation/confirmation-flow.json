@@ -1,0 +1,8 @@
+{
+  "id": "confirmation",
+  "description": "Flow main",
+  "defaultPage": "confirmation-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

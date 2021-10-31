@@ -1,0 +1,36 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "o_date": "2021-10-27T18:37:39Z",
+            "office_id": 1,
+            "hs_total": 30,
+            "hs_available": 30,
+            "s_mt_total": 5,
+            "s_mt_avl": 5,
+            "x_mt_total": 2,
+            "x_mt_avl": 2,
+            "office_open_fl": "Y",
+            "created_by": "admin",
+            "created_date": "2021-10-27T18:39:36Z"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 1,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/hsbooking/seatAvail?officeId=1&bookingDate=2021-10-27"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/metadata-catalog/hsbooking/item"
+        },
+        {
+            "rel": "first",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/hsbooking/seatAvail?officeId=1&bookingDate=2021-10-27"
+        }
+    ]
+}

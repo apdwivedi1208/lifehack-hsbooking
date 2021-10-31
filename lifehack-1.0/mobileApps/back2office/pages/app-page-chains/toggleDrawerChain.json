@@ -1,0 +1,15 @@
+{
+  "description": "Toggles the visibility of the navigation drawer.",
+  "variables": {},
+  "root": "toggleDrawer",
+  "actions": {
+    "toggleDrawer": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{ $page.components.byId('mobile-navigation-drawer') }}",
+        "method": "toggle",
+        "params": []
+      }
+    }
+  }
+}

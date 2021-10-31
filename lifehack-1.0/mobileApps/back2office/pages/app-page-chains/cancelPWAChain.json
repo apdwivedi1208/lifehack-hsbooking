@@ -1,0 +1,24 @@
+{
+  "description": "For Progressive Web Apps (PWA), handles the ‘Cancel’ button in the add to home screen popup.",
+  "root": "assignVariablePromptResolved",
+  "actions": {
+    "assignVariablePromptResolved": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.promptResolved": {
+          "source": true
+        }
+      },
+      "outcomes": {
+        "success": "closeAddToHomeScreenPopup"
+      }
+    },
+    "closeAddToHomeScreenPopup": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{document.getElementById('pwaAddToHomeScreen')}}",
+        "method": "close"
+      }
+    }
+  }
+}

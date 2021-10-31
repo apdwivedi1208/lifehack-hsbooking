@@ -1,0 +1,10 @@
+    {
+
+    "id": "editable-table",
+        "description": "Flow main",
+        "defaultPage": "table-filter-start",
+        "chains": {},
+        "services": {},
+        "types": {},
+        "variables": {}
+    }

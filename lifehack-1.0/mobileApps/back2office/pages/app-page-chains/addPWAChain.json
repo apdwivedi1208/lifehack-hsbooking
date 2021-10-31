@@ -1,0 +1,28 @@
+{
+  "description": "For Progressive Web Apps (PWA), handles the ‘Add’ button in the add to home screen popup.",
+  "root": "addPWA",
+  "actions": {
+    "addPWA": {
+      "module": "vb/action/builtin/callModuleFunctionAction",
+      "parameters": {
+        "module": "{{ $page.functions }}",
+        "functionName": "addPWA",
+        "params": [
+          "{{$page.variables.installPromptEventPayload }}"
+        ],
+        "returnType": "boolean"
+      },
+      "outcomes": {
+        "success": "assignVariablePromptResolved"
+      }
+    },
+    "assignVariablePromptResolved": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.promptResolved": {
+          "source": "{{ $chain.results.addPWA }}"
+        }
+      }
+    }
+  }
+}

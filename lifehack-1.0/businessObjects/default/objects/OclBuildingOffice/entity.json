@@ -1,0 +1,131 @@
+{
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "a769a9a4-6229-48d2-9929-3804bac59849",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "87950b30-9c0e-4426-b2f8-10cb9bf19797",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "667d55b7-3eb4-4ebc-a704-3593f914c07e",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "e3e5530a-8b42-450c-801c-f6251d6fe521",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "aa6720c6-c15a-4721-a70e-6ec54eaf034b",
+            "type": "string"
+        },
+{
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "9e25fe3c-7d87-4f91-9a9b-a7946c7c0b48",
+            "type": "number"
+        },
+        {
+            "type": "string",
+            "name": "country",
+            "oid": "f21c940d-ff37-4ace-a676-5db046356add",
+            "displayLabel": "Country"
+        }        ,
+        {
+            "type": "string",
+            "name": "state",
+            "oid": "b1390532-e317-4d6d-b230-6746c75d80c8",
+            "displayLabel": "State"
+        }        ,
+        {
+            "type": "string",
+            "name": "officeLocation",
+            "oid": "06859367-3868-4307-b0c0-c578ab02902a",
+            "displayLabel": "OfficeLocation"
+        }        ,
+        {
+            "type": "string",
+            "name": "lat",
+            "oid": "e4ab9d31-492a-47cd-9622-c2979247b493",
+            "displayLabel": "Lat"
+        }        ,
+        {
+            "type": "string",
+            "name": "long1",
+            "oid": "8dacdcd0-e724-455e-957e-cea54d4dcb5c",
+            "displayLabel": "Long"
+        }
+    ],
+    "name": "OclBuildingOffice",
+    "oid": "07f8880b-eebf-47d1-a060-c1aad5cecc11",
+    "displayLabel": "oclBuildingOffice",
+    "pluralLabel": "oclBuildingOffice",
+    "security": {
+        "type": "local",
+        "acl": [
+            {
+                "roleId": "approle.anonymous.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            },
+            {
+                "roleId": "approle.authenticated.user",
+                "privileges": [
+                    {
+                        "name": "view",
+                        "value": true
+                    },
+                    {
+                        "name": "create",
+                        "value": true
+                    },
+                    {
+                        "name": "update",
+                        "value": true
+                    },
+                    {
+                        "name": "delete",
+                        "value": true
+                    }
+                ]
+            }
+        ]
+    }
+}

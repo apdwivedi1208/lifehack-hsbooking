@@ -1,0 +1,139 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Ords Madhack",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/hsbooking",
+            "description": "Ords Madhack"
+        }
+    ],
+    "paths": {
+        "/myBooking": {
+            "get": {
+                "operationId": "getMyBooking",
+                "parameters": [
+                    {
+                        "name": "uName",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "awadhesh"
+                        }
+                    },
+                    {
+                        "name": "bookingDate",
+                        "in": "query",
+                        "schema": {
+                            "type": "string"
+                        },
+                        "x-vb": {
+                            "defaultValue": "2021-10-28"
+                        }
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "Response for default",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/GetMyBooking"
+                                },
+                                "examples": {
+                                    "vb": {
+                                        "summary": "Example stored by VB User",
+                                        "externalValue": "./examples/getMyBooking/response_default_application_json_vb.json"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-vb": {
+                    "actionHint": "getMany"
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "GetMyBooking": {
+                "type": "object",
+                "properties": {
+                    "items": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "id": {
+                                    "type": "integer"
+                                },
+                                "office_id": {
+                                    "type": "integer"
+                                },
+                                "booking_date": {
+                                    "type": "string"
+                                },
+                                "seat_detail": {
+                                    "type": "string"
+                                },
+                                "username": {
+                                    "type": "string"
+                                },
+                                "created_by": {
+                                    "type": "string"
+                                },
+                                "created_date": {
+                                    "type": "string"
+                                },
+                                "food": {
+                                    "type": "string"
+                                },
+                                "parking": {
+                                    "type": "string"
+                                },
+                                "qrcode": {
+                                    "nullable": true
+                                },
+                                "status": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "hasMore": {
+                        "type": "boolean"
+                    },
+                    "limit": {
+                        "type": "integer"
+                    },
+                    "offset": {
+                        "type": "integer"
+                    },
+                    "count": {
+                        "type": "integer"
+                    },
+                    "links": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "rel": {
+                                    "type": "string"
+                                },
+                                "href": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

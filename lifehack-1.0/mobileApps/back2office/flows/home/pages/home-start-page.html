@@ -1,0 +1,33 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Home">
+  
+  <div class="oj-flex-item oj-flex oj-sm-flex-wrap-nowrap oj-sm-flex-direction-column">
+    <h4 class="oj-flex-item oj-sm-flex-initial">Upcoming Bookings</h4>
+    <div class="oj-panel oj-flex-item oj-flex oj-sm-margin-1x oj-sm-flex-initial">
+      <oj-highlight-text text="You have booked your seat for 29-10-2021 at Oracle Gurugram. Seat Number: 1st Floor. 223"
+        match-text="Highlight" class="oj-flex-item oj-sm-flex-initial"></oj-highlight-text>
+    </div>
+    <div class="oj-flex-item oj-sm-flex-initial">
+      <oj-button class="oj-button-full-width button1" id="btn-checkin" on-oj-action="[[$listeners.btnCheckinOjAction]]">Check In Now</oj-button>
+    </div>
+
+    
+
+    
+    <div class="oj-flex-item oj-sm-flex-initial">
+      <oj-button class="oj-button-full-width button2" on-oj-action="[[$listeners.ojButtonOjAction]]">Book Your Desk</oj-button>
+    </div>
+  </div>
+  <div class="oj-sm-align-self-center">
+      
+    
+  </div>
+  <oj-button id="drawerToggleButton" chroming="borderless" display="icons" slot="startControl">
+        
+    <span slot="startIcon" class="oj-ux-ico-list"></span>
+        
+    <span>
+      <oj-bind-text></oj-bind-text>
+    </span>
+    
+  </oj-button>
+</oj-ext-mobile-page-template>

@@ -1,0 +1,16 @@
+{
+  "root": "resetJob",
+  "description": "Clears Job form state",
+  "actions": {
+    "resetJob": {
+      "module": "vb/action/builtin/resetVariablesAction",
+      "description": "Resets job variable to the default state",
+      "label": "Reset Job variable",
+      "parameters": {
+        "variables": [
+          "$page.variables.job"
+        ]
+      }
+    }
+  }
+}

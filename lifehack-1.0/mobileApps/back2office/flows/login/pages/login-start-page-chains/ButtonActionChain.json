@@ -1,0 +1,39 @@
+{
+  "description": "",
+  "root": "callRestGetEmployee",
+  "actions": {
+    "fireNotification": {
+      "module": "vb/action/builtin/fireNotificationEventAction",
+      "parameters": {
+        "target": "leaf",
+        "summary": "[[ $chain.results.callRestGetEmployee.message.summary ]]",
+        "type": "error",
+        "displayMode": "persist"
+      }
+    },
+    "callRestGetEmployee": {
+      "module": "vb/action/builtin/restAction",
+      "parameters": {
+        "endpoint": "apex-getUserDetail/getEmployee",
+        "uriParams": {
+          "uName": "{{ $application.variables.globalusername }}"
+        }
+      },
+      "outcomes": {
+        "failure": "fireNotification",
+        "success": "navigateToHome"
+      }
+    },
+    "navigateToHome": {
+      "module": "vb/action/builtin/navigateAction",
+      "@dt": {
+        "targetType": "flow"
+      },
+      "parameters": {
+        "target": "parent",
+        "flow": "home"
+      }
+    }
+  },
+  "variables": {}
+}

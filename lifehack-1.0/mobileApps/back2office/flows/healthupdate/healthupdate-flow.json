@@ -1,0 +1,8 @@
+{
+  "id": "healthupdate",
+  "description": "Flow main",
+  "defaultPage": "healthupdate-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

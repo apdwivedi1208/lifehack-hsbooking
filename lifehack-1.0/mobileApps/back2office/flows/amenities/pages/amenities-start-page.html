@@ -1,0 +1,27 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Page Title">
+  <oj-button slot="startControl" id="drawerToggleButton" on-click="[[$listeners.fireToggleDrawer]]" chroming="borderless" display="icons">
+        <span slot="startIcon" class="oj-ux-ico-list"></span>
+        <span><oj-bind-text value="[[ $application.translations.app.toggle_drawer_label ]]"></oj-bind-text></span>
+    </oj-button>
+  <div class="oj-flex-item oj-flex oj-sm-flex-direction-column oj-sm-flex-wrap-nowrap">
+    <oj-list-view id="page-list-view">
+      <template slot="itemTemplate">
+        <oj-vb-list-item display-options.drill="[['on']]">
+          <!-- Remove span with class for icon and replace with img to directly use an image -->
+          <span role="img" slot="image" :class="[[ $current.data.icon ]]">
+          </span>
+          <!--img src="[[ $current.data.image ]]" slot="image" width="32" height="32"/-->
+          <div slot="title1">
+            <oj-bind-text value="[[ $current.data.title1 ]]"></oj-bind-text>
+          </div>
+          <div slot="title2">
+            <oj-bind-text value="[[ $current.data.title2 ]]"></oj-bind-text>
+          </div>
+          <div slot="value1">
+            <oj-bind-text value="[[ $current.data.value1 ]]"></oj-bind-text>
+          </div>
+        </oj-vb-list-item>
+      </template>
+    </oj-list-view>
+  </div>
+</oj-ext-mobile-page-template>

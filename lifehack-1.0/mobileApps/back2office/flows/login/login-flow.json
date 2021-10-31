@@ -1,0 +1,8 @@
+{
+  "id": "login",
+  "description": "Flow main",
+  "defaultPage": "login-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

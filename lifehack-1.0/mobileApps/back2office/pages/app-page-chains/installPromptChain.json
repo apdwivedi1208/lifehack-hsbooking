@@ -1,0 +1,42 @@
+{
+  "description": "For Progressive Web Apps (PWA), displays a popup to help the user install to home screen.",
+  "variables": {
+    "eventPayload": {
+      "type": "object"
+    }
+  },
+  "root": "assignVariableInstallPrompt",
+  "actions": {
+    "assignVariableInstallPrompt": {
+      "module": "vb/action/builtin/assignVariablesAction",
+      "parameters": {
+        "$page.variables.installPromptEventPayload": {
+          "source": "{{ $chain.variables.eventPayload }}"
+        }
+      },
+      "outcomes": {
+        "success": "ifPromptCancelled"
+      }
+    },
+    "ifPromptCancelled": {
+      "module": "vb/action/builtin/ifAction",
+      "parameters": {
+        "condition": "{{ !$page.variables.promptResolved && $page.variables.installPromptEventPayload}}"
+      },
+      "outcomes": {
+        "true": "displayAddToHomesScreenPopup"
+      }
+    },
+    "displayAddToHomesScreenPopup": {
+      "module": "vb/action/builtin/callComponentMethodAction",
+      "parameters": {
+        "component": "{{document.getElementById('pwaAddToHomeScreen')}}",
+        "method": "open",
+        "params": [
+          "{{ 'body' }}",
+          "{{ {my: {horizontal: 'end', vertical: 'bottom'}, at : {horizontal: 'end', vertical: 'bottom'}} }}"
+        ]
+      }
+    }
+  }
+}

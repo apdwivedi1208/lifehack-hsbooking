@@ -1,0 +1,56 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "getMyBookingListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "apex-getmybooking/getMyBooking",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "getMyBookingResponse",
+        "uriParameters": {
+          "uName": "{{ $application.variables.globalusername }}",
+          "bookingDate": "{{ $application.variables.globaldatetime }}"
+        }
+      }
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getMyBookingResponse": {
+      "endpoint": "getMyBooking",
+      "service": "apex-getmybooking",
+      "path": "response"
+    },
+    "getMyBookingResponse": {
+      "items": [
+        {
+          "booking_date": "string",
+          "food": "string",
+          "id": "number",
+          "parking": "string",
+          "seat_detail": "string",
+          "status": "string"
+        }
+      ]
+    }
+  },
+  "eventListeners": {},
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-ext-mobile-page-template": {
+        "path": "vb/components/mobile-page-template/loader"
+      },
+      "oj-list-view": {
+        "path": "ojs/ojlistview"
+      },
+      "oj-vb-list-item": {
+        "path": "vb/components/list-item/loader"
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "bookdatetime": {
+      "type": "string",
+      "required": true,
+      "rateLimit": {
+        "timeout": 100
+      },
+      "input": "fromCaller"
+    },
+    "selectedBuilding": {
+      "type": "string",
+      "required": true,
+      "input": "fromUrl"
+    }
+  },
+  "metadata": {},
+  "types": {},
+  "eventListeners": {
+    "ojButtonOjAction": {
+      "chains": [
+        {
+          "chainId": "ButtonActionChainForSeat"
+        }
+      ]
+    },
+    "ojInputDateValue": {
+      "chains": [
+        {
+          "chainId": "InputDateValueChangeChain",
+          "parameters": {
+            "value": "{{ $event.detail.value }}"
+          }
+        }
+      ]
+    }
+
+  },
+  "imports": {
+    "components": {
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-ext-mobile-page-template": {
+        "path": "vb/components/mobile-page-template/loader"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      }
+    }
+  }
+}

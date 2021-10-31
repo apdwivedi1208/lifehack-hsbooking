@@ -1,0 +1,62 @@
+{
+    "items": [
+        {
+            "id": 1,
+            "office_name": "One Horizon Center",
+            "floor": "1",
+            "office_city": "Gurugram",
+            "office_country": "India",
+            "office_address": "BLC-143 one horizon center, Golf Course Rd, Harizan Colony, DLF Phase 5, Sector 54, Gurugram, Haryana 122002"
+        },
+        {
+            "id": 2,
+            "office_name": "Lotus Business Park",
+            "floor": "1",
+            "office_city": "Noida",
+            "office_country": "India",
+            "office_address": "Ground To 6th Floors, Lotus Business Park, Tower A, Plot No 8 Express Highway, Sector 127, Noida, Uttar Pradesh 201301"
+        },
+        {
+            "id": 3,
+            "office_name": "Oracle Digital Office India",
+            "floor": "5",
+            "office_city": "Bangalore",
+            "office_country": "India",
+            "office_address": "Prestige Technology Park Mercury Block 2B, Levels 2, 3, 4, 7, 8, 9 Survey, #29, Sarjapur Marathalli Ring Road Kadabeesanahalli Village, Varthur Hobli, Bengaluru, Karnataka 560103"
+        },
+        {
+            "id": 4,
+            "office_name": "One Horizon Center",
+            "floor": "2",
+            "office_city": "Gurugram",
+            "office_country": "India",
+            "office_address": "BLC-143 one horizon center, Golf Course Rd, Harizan Colony, DLF Phase 5, Sector 54, Gurugram, Haryana 122002"
+        },
+        {
+            "id": 5,
+            "office_name": "One Horizon Center",
+            "floor": "3",
+            "office_city": "Gurugram",
+            "office_country": "India",
+            "office_address": "BLC-143 one horizon center, Golf Course Rd, Harizan Colony, DLF Phase 5, Sector 54, Gurugram, Haryana 122002"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 5,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/hsbooking/offices"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/metadata-catalog/hsbooking/item"
+        },
+        {
+            "rel": "first",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/hsbooking/offices"
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+<oj-ext-mobile-page-template id="page-template" page-title="Health Update">
+  <oj-button id="drawerToggleButton" chroming="borderless" display="icons" slot="startControl">
+        
+    
+    <span slot="startIcon" class="oj-ux-ico-list"></span>
+        
+    
+    <span>
+      
+      <oj-bind-text></oj-bind-text>
+    
+    </span>
+    
+  
+  </oj-button>
+</oj-ext-mobile-page-template>
+<div class="oj-flex">
+  <oj-toolbar id="oj-toolbar-for-oj-dynamic-form--2057895073-1" chroming="solid" class="oj-flex-item oj-sm-12 oj-md-12">
+        <oj-button disabled="[[ $variables.createJobChainInProgress ]]" on-oj-action="[[$listeners.saveButtonClicked]]">Save</oj-button>
+  </oj-toolbar>
+</div>
+<div class="oj-flex">
+  <oj-file-picker capture='implementation' accept='["image/*", "video/*"]'
+    class="oj-filepicker-custom oj-flex-item oj-sm-flex-initial">
+        <oj-button slot='trigger' chroming='outlined'>Take Photo/Video
+      <span class="oj-ux-ico-file-image" slot="startIcon"></span>
+        </oj-button>
+  </oj-file-picker>
+</div>

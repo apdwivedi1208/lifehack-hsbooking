@@ -1,0 +1,37 @@
+{
+  "layoutTypes": {
+    "businessObjects": {
+      "kind": "operationRef",
+      "serviceId": "businessObjects",
+      "operations": [
+        "create_Job"
+      ]
+    }
+  },
+  "layouts": {
+    "isDefault": {
+      "description": "Default Rule",
+      "type": "businessObjects",
+      "expression": "default"
+    },
+    "jobTitel": {
+      "type": "businessObjects",
+      "layoutType": "form",
+      "label": "JobTitel",
+      "description": "What is your job title ?",
+      "rules": [
+        "isDefault"
+      ],
+      "layouts": {
+        "default": {
+          "layoutType": "form",
+          "layout": {
+            "displayProperties": [
+              "jobTitle"
+            ]
+          }
+        }
+      }
+    }
+  }
+}

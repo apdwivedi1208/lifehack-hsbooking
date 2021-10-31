@@ -1,0 +1,5 @@
+id,creationDate,lastUpdateDate,createdBy,lastUpdatedBy,country,state,officeLocation,lat,long1
+1,2021-10-24T08:46:55,2021-10-24T08:49:09,awadhesh.p.dwivedi@oracle.com,awadhesh.p.dwivedi@oracle.com,India,Haryana,"DLF Building No. 8 , Tower A Ground & 3rd Floor, Gurugram,  Pin Code 122002",28.4747,77.1049
+2,2021-10-24T08:48:46,2021-10-24T08:48:46.011,awadhesh.p.dwivedi@oracle.com,awadhesh.p.dwivedi@oracle.com,India,Uttar Pradesh,"Building 3C, Tower A Ground to 6th Floors, Plot 8, Sector 127, Noida",28.4747,77.1049
+3,2021-10-24T08:51:04,2021-10-24T08:51:04.009,awadhesh.p.dwivedi@oracle.com,awadhesh.p.dwivedi@oracle.com,India,Maharashtra,"Floor Silver Metropolis, 6th Floor, Wester Express Highway, Goregaon East, Mumbai- 400063",19.0760,72.8777
+4,2021-10-24T08:52:30,2021-10-24T08:52:30.006,awadhesh.p.dwivedi@oracle.com,awadhesh.p.dwivedi@oracle.com,India,Karnataka,"India Development Center No. 3, Bannerghatta Road, Bangalore - 560029",12.9716,77.5946

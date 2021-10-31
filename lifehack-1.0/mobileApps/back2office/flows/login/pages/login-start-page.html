@@ -1,0 +1,16 @@
+<oj-ext-mobile-page-template id="page-template" page-title="HotSeatBooking">
+  
+  <div class="oj-flex-item oj-flex oj-sm-flex-direction-column oj-sm-flex-wrap-nowrap">
+    <div class="oj-panel oj-flex-item oj-flex oj-sm-margin-1x oj-sm-flex-initial">
+      <oj-input-text label-hint="Username" class="oj-flex-item oj-sm-flex-initial"
+        value="{{ $application.variables.globalusername }}" required="true"></oj-input-text>
+    </div>
+
+    
+
+    
+    <div class="oj-flex-item oj-sm-flex-initial">
+      <oj-button class="oj-button-full-width button1" on-oj-action="[[$listeners.ojButtonOjAction]]">Login</oj-button>
+    </div>
+  </div>
+</oj-ext-mobile-page-template>

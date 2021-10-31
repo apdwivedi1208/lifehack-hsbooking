@@ -1,0 +1,8 @@
+{
+  "id": "mybooking",
+  "description": "Flow main",
+  "defaultPage": "mybooking-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

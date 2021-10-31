@@ -1,0 +1,66 @@
+{
+    "fields": [
+        {
+            "displayLabel": "Id",
+            "internal": true,
+            "key": true,
+            "name": "id",
+            "oid": "83dd0811-db4a-4e87-aa01-ace981eae584",
+            "required": true,
+            "type": "number",
+            "unique": true
+        },
+        {
+            "displayLabel": "Created",
+            "internal": true,
+            "name": "creationDate",
+            "oid": "eb4e2ea8-4f41-43c0-a293-740e4c7deb41",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Last Updated",
+            "internal": true,
+            "name": "lastUpdateDate",
+            "oid": "5ee9089e-6a62-4710-8880-8fcc06165259",
+            "type": "datetime"
+        },
+        {
+            "displayLabel": "Created By",
+            "internal": true,
+            "name": "createdBy",
+            "oid": "3d8ac85c-5b1a-4c1a-920c-9df9b8279dc4",
+            "type": "string"
+        },
+        {
+            "displayLabel": "Last Updated By",
+            "internal": true,
+            "name": "lastUpdatedBy",
+            "oid": "d58ab7cd-9acc-40e8-88d1-e85504c9a72c",
+            "type": "string"
+        },
+{
+            "displayLabel": "<internal>",
+            "hidden": true,
+            "internal": true,
+            "name": "abcsChangeNumber",
+            "oid": "2c907a3c-46f0-4671-bd7f-c5b1eb29e9a1",
+            "type": "number"
+        },
+        {
+            "type": "string",
+            "name": "amentiesType",
+            "oid": "d04e7961-9329-49e2-a2d9-5d32a696c983",
+            "displayLabel": "AmentiesType"
+        }        ,
+        {
+            "type": "string",
+            "name": "amentiesDetail",
+            "oid": "041334a6-b8c7-4ef7-a923-61e48dbd3ad4",
+            "displayLabel": "amentiesDetail"
+        }
+    ],
+    "name": "OclAmenities",
+    "oid": "4ae12874-da4c-4101-90bb-949d3efeef83",
+    "displayLabel": "oclAmenities",
+    "pluralLabel": "oclAmenties"
+}

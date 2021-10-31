@@ -1,0 +1,119 @@
+{
+  "title": "",
+  "description": "",
+  "variables": {
+    "createJobChainInProgress": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "job": {
+      "type": "page:createJobRequest"
+    },
+    "selectSingleADP": {
+      "type": "vb/ArrayDataProvider2",
+      "defaultValue": {
+        "keyAttributes": "value",
+        "data": [
+          {
+            "value": "val1",
+            "label": "Value1"
+          },
+          {
+            "value": "val2",
+            "label": "Value2"
+          },
+          {
+            "value": "val3",
+            "label": "Value3"
+          }
+        ]
+      }
+    }
+
+  },
+  "metadata": {
+    "businessObjectsCreateJobMetadata": {
+      "type": "vb/DynamicLayoutMetadataProviderDescriptor",
+      "defaultValue": {
+        "endpoint": "businessObjects/create_Job"
+      }
+    }
+  },
+  "types": {
+    "@decorators.createJobRequest": {
+      "endpoint": "create_Job",
+      "service": "businessObjects",
+      "path": "request"
+    },
+    "businessObjectsServiceErrorResponseType": {
+      "body": {
+        "status": "string",
+        "title": "string",
+        "o:errorDetails": [
+          {
+            "detail": "string",
+            "o:errorCode": "string"
+          }
+        ]
+      },
+      "status": "number"
+    },
+    "createJobRequest": "object"
+  },
+  "eventListeners": {
+    "fireToggleDrawer": {
+      "chains": [
+        {
+          "chainId": "toggleDrawerChain",
+          "parameters": {}
+        }
+      ]
+    },
+    "saveButtonClicked": {
+      "chains": [
+        {
+          "chainId": "createJobChain"
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+
+      "oj-ext-mobile-page-template": {
+        "path": "vb/components/mobile-page-template/loader"
+      },
+      "oj-file-picker": {
+        "path": "ojs/ojfilepicker"
+      },
+      "oj-label": {
+        "path": "ojs/ojlabel"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-text-area": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-input-number": {
+        "path": "ojs/ojinputnumber"
+      },
+      "oj-input-date": {
+        "path": "ojs/ojdatetimepicker"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      },
+      "oj-label-value": {
+        "path": "ojs/ojlabelvalue"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-toolbar": {
+        "path": "ojs/ojtoolbar"
+      }
+
+    }
+  }
+}

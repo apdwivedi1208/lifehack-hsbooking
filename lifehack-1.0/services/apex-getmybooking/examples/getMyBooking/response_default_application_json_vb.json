@@ -1,0 +1,35 @@
+{
+    "items": [
+        {
+            "id": 187,
+            "office_id": 4,
+            "booking_date": "2021-10-28T00:00:00Z",
+            "seat_detail": "Hot Seat",
+            "username": "awadhesh",
+            "created_by": "awadhesh",
+            "created_date": "2021-10-28T08:06:38Z",
+            "food": "Yes",
+            "parking": "No",
+            "qrcode": null,
+            "status": "BOOKED"
+        }
+    ],
+    "hasMore": false,
+    "limit": 25,
+    "offset": 0,
+    "count": 1,
+    "links": [
+        {
+            "rel": "self",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/hsbooking/myBooking?uName=awadhesh&bookingDate=2021-10-28"
+        },
+        {
+            "rel": "describedby",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/metadata-catalog/hsbooking/item"
+        },
+        {
+            "rel": "first",
+            "href": "https://g628708482bc6f7-madhackhsb.adb.ap-mumbai-1.oraclecloudapps.com/ords/madhack/hsbooking/myBooking?uName=awadhesh&bookingDate=2021-10-28"
+        }
+    ]
+}

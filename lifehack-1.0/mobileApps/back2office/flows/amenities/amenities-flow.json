@@ -1,0 +1,8 @@
+{
+  "id": "amenities",
+  "description": "Flow main",
+  "defaultPage": "amenities-start",
+  "services": {},
+  "types": {},
+  "variables": {}
+}

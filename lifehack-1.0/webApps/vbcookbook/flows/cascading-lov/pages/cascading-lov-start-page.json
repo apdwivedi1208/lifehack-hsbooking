@@ -1,0 +1,387 @@
+{
+
+  "title": "",
+  "description": "",
+  "variables": {
+    "countryListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Country",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "page:getallCountryResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "countryName"
+          ]
+        },
+        "filterCriterion": {
+          "op": "$eq",
+          "attribute": "region",
+          "value": "{{ $variables.selectedRegion.key!=null ? $variables.selectedRegion.key : undefined  }}"
+        }
+      }
+    },
+    "isTokyoSelected": {
+      "type": "boolean",
+      "defaultValue": false
+    },
+    "locationListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Location",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "page:getallLocationResponse",
+        "filterCriterion": {
+          "op": "$eq",
+          "attribute": "locationCountry.id",
+          "value": "{{ $variables.selectedCountry.key!=null ? $variables.selectedCountry.key : undefined }}"
+        },
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "city"
+          ]
+        }
+      }
+    },
+    "regionListSDP": {
+      "type": "vb/ServiceDataProvider",
+      "defaultValue": {
+        "endpoint": "businessObjects/getall_Region",
+        "keyAttributes": "id",
+        "itemsPath": "items",
+        "responseType": "page:getallRegionResponse",
+        "transformsContext": {
+          "vb-textFilterAttributes": [
+            "regionName"
+          ]
+        }
+      }
+    },
+    "selectedRegion": {
+      "type": "selectedObjectType"
+    },
+    "selectedCountry": {
+      "type": "selectedObjectType"
+    },
+    "selectedLocation": {
+      "type": "selectedObjectType"
+    }
+  },
+  "metadata": {},
+  "types": {
+    "@decorators.getallLocationResponse": {
+      "endpoint": "getall_Location",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "@decorators.getallRegionResponse": {
+      "endpoint": "getall_Region",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getallLocationResponse": {
+      "items": [
+        {
+          "city": "string",
+          "country": "number",
+          "id": "number",
+          "postalCode": "string",
+          "stateProvince": "string",
+          "streetAddress": "string"
+        }
+      ]
+    },
+    "getallCountryResponse": {
+      "items": [
+        {
+          "countryName": "string",
+          "id": "number"
+        }
+      ]
+    },
+    "@decorators.getallCountryResponse": {
+      "endpoint": "getall_Country",
+      "service": "businessObjects",
+      "path": "response"
+    },
+    "getallRegionResponse": {
+      "items": [
+        {
+          "id": "number",
+          "regionName": "string"
+        }
+      ]
+    },
+    "selectedObjectType": {
+      "data": "object",
+      "key": "number",
+      "metadata": "object"
+    }
+  },
+  "chains": {
+    "ResetValues": {
+      "description": "",
+      "variables": {
+        "detail": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        }
+      },
+      "root": "resetVariables1",
+      "actions": {
+        "resetVariables1": {
+          "module": "vb/action/builtin/resetVariablesAction",
+          "parameters": {
+            "variables": [
+              "$page.variables.selectedCountry",
+              "$page.variables.selectedLocation",
+              "$page.variables.selectedRegion"
+            ]
+          }
+        }
+      }
+    },
+    "RegionValueItemChangeChain": {
+      "description": "",
+      "root": "if1",
+      "actions": {
+        "selectedCountryresetVariables": {
+          "module": "vb/action/builtin/resetVariablesAction",
+          "parameters": {
+            "variables": [
+              "$page.variables.selectedCountry"
+            ]
+          },
+          "outcomes": {
+            "success": "if2"
+          }
+        },
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ !$page.variables.isTokyoSelected ]]"
+          },
+          "outcomes": {
+            "true": "selectedCountryresetVariables",
+            "false": "if2"
+          }
+        },
+        "if2": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ $variables.changeType ==='internal' ]]"
+          },
+          "outcomes": {
+            "true": "resetVariables1"
+          }
+        },
+        "resetVariables1": {
+          "module": "vb/action/builtin/resetVariablesAction",
+          "parameters": {
+            "variables": [
+              "$page.variables.selectedCountry",
+              "$page.variables.selectedLocation"
+            ]
+          }
+        }
+      },
+      "variables": {
+        "changeType": {
+          "type": "any",
+          "input": "fromCaller"
+        },
+        "key": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        },
+        "data": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        },
+        "metadata": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        }
+      }
+    },
+    "CountryValueItemChangeChain": {
+      "description": "",
+      "root": "if1",
+      "actions": {
+        "resetVariables1": {
+          "module": "vb/action/builtin/resetVariablesAction",
+          "parameters": {
+            "variables": [
+              "$page.variables.selectedLocation"
+            ]
+          }
+        },
+        "if1": {
+          "module": "vb/action/builtin/ifAction",
+          "parameters": {
+            "condition": "[[ !($page.variables.selectedCountry.key ==4) ]]"
+          },
+          "outcomes": {
+            "true": "resetVariables1"
+          }
+        }
+      },
+      "variables": {
+        "key": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        },
+        "data": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        },
+        "metadata": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        },
+        "updatedFromChain": {
+          "type": "string",
+          "input": "fromCaller"
+        }
+      }
+    },
+    "SelectTokyoActionChain": {
+      "description": "",
+      "root": "assignVariables1",
+      "actions": {
+        "assignVariables1": {
+          "module": "vb/action/builtin/assignVariablesAction",
+          "parameters": {
+            "$page.variables.selectedRegion": {
+              "source": {
+                "data": {
+                  "id": 3,
+                  "regionName": "Asia"
+                },
+                "metadata": {
+                  "key": 3
+                },
+                "key": 3
+              },
+              "auto": "ifNoMappings"
+            },
+            "$page.variables.selectedCountry": {
+              
+              "source": {
+                "data": {
+                  "countryName": "Japan",
+                  "id": 4
+                },
+                "metadata": {
+                  "key": 4
+                },
+                "key": 4
+              }
+            },
+            "$page.variables.selectedLocation": {
+              "source": {
+                "data": {
+                  "city": "Tokyo",
+                  "country": 4,
+                  "id": 3,
+                  "postalCode": "1689",
+                  "stateProvince": "Tokyo Prefecture",
+                  "streetAddress": "2017 Shinjuku-ku"
+                },
+                "metadata": {
+                  "key": 3
+                },
+                "key": 3
+              },
+              "auto": "always"
+            },
+            "$page.variables.isTokyoSelected": {
+              "source": true
+            }
+          }
+        }
+      },
+      "variables": {
+        "detail": {
+          "required": true,
+          "type": "any",
+          "input": "fromCaller"
+        }
+      }
+    }
+  },
+  "eventListeners": {
+    "countrySelectValueItem": {
+      "chains": [
+        {
+          "chainId": "CountryValueItemChangeChain",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "changeType": "{{ $event.detail.updatedFrom }}",
+            "updatedFromChain": "{{ $event.detail.updatedFrom }}"
+          }
+        }
+      ]
+    },
+    "ojButtonOjAction": {
+      "chains": [
+        {
+          "chainId": "SelectTokyoActionChain",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    },
+    "regionSelectValueItem": {
+      "chains": [
+        {
+          "chainId": "RegionValueItemChangeChain",
+          "parameters": {
+            "key": "{{$event.detail.value.key}}",
+            "data": "{{$event.detail.value.data}}",
+            "metadata": "{{$event.detail.value.metadata}}",
+            "changeType": "{{ $event.detail.updatedFrom }}"
+          }
+        }
+      ]
+    },
+    "resetAction": {
+      "chains": [
+        {
+          "chainId": "ResetValues",
+          "parameters": {
+            "detail": "{{ $event.detail }}"
+          }
+        }
+      ]
+    }
+  },
+  "imports": {
+    "components": {
+      "oj-form-layout": {
+        "path": "ojs/ojformlayout"
+      },
+      "oj-input-text": {
+        "path": "ojs/ojinputtext"
+      },
+      "oj-button": {
+        "path": "ojs/ojbutton"
+      },
+      "oj-select-single": {
+        "path": "ojs/ojselectsingle"
+      }
+    }
+  }
+}
