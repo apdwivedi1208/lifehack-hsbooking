@@ -11,8 +11,8 @@ To overcome this situation, team lifehackers has developed Hot Seat booking that
 Get hands on on Oracle Visual Builder and Oracle Apex
 
 ### Prerequisites
-Oracle cloud
-Oracle Visual Builder
+1.Oracle cloud <br>
+2.Oracle Visual Builder <br>
 Oracle Autonomous database
 Oracle Apex
 Oracle Analytics Server
